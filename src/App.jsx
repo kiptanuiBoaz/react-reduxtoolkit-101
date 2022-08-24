@@ -1,7 +1,7 @@
 import React from "react";
 import "../src/App.css";
 import {useSelector,useDispatch} from "react-redux";
-import { decrement, increment } from "./redux/counter";
+import { decrement, increment, incrementByAmount } from "./redux/counter";
 
 
 export default function App() {
@@ -10,8 +10,9 @@ export default function App() {
   return (
     <div >
       <h1>The count is : {count}</h1>
-      <button onClick={()=> dispatch(increment)}>Increment</button>
-      <button onClick={()=> dispatch(decrement)}>Decrement</button>
+      <button onClick={()=> dispatch(increment())}>Increment</button>
+      <button onClick={()=> dispatch(decrement())}>Decrement</button>
+      <button onClick={()=> dispatch(incrementByAmount(10))}>Decrement by 10</button>
     </div>
   );
 }
